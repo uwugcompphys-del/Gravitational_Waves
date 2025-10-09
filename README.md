@@ -7,8 +7,7 @@ $$
 Q_{ij}=M(3x_ix_j-|\mathbb{x}|^2\delta_{ij})
 $$
 And the strain tensor is found by the following
-$$
-$$
+
 
 ## Gravitational Waves
 The actual strain tensor itself is calculated in the file `grav_waves.py`
