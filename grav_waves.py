@@ -145,4 +145,4 @@ def wave_strain_tester():
 #Set distance to be around 1e15 to 1e20
 #strain_plotter(celestial_objects.ellipsoid_object,10e10,0,.3,.2, .5, .95, .9, 1, densities.neutron_star_gaussian_approx, 5e4, rotations.arbitrary_axis_nonConst_rotation_linear_decreasing_rate)    
 #strain_plotter(celestial_objects.ellipsoid_object,10e10,0,.9,.001, .5, .95, .9, 1, densities.gaussian, 5e4, rotations.arbitrary_axis_neutron_star_rotation)    
-strain_plotter(celestial_objects.ellipsoid_object,1.892e15,0,30,.01, 1, 2, 1, .8, densities.neutron_star_gaussian_approx, 5e4, rotations.arbitrary_precessing_axis_nonConst_rotation_linear_decreasing_rate) #change timestep back to .05 if not have a lot of time
+strain_plotter(celestial_objects.ellipsoid_object,1.892e15,0,20,.01, 1, 2, 1, .8, densities.neutron_star_gaussian_approx, 5e4, rotations.arbitrary_LARGE_PRECESSION_axis_nonConst_rotation_linear_decreasing_rate) #change timestep back to .05 if not have a lot of time
