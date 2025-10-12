@@ -13,7 +13,7 @@ $$h_{ij}=\frac{2}{r}\ddot{Q_{ij}}(t)$$
 
 Where $d$ is the distance from the source and $Q_{ij}$ is the mass quadrupole moment of the source found by 
 
-$$Q_{ij}=\oiiint_V\rho(\vec{x})(x_ix_j-\frac{1}{3}|\vec{x}|^2\delta_{ij})\ dV$$
+$$Q_{ij}=\int_V\rho(\vec{x})(x_ix_j-\frac{1}{3}|\vec{x}|^2\delta_{ij})\ dV$$
 
 
 ## Gravitational Waves
