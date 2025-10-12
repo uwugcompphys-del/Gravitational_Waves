@@ -7,7 +7,7 @@ The strain tensor and the associated mass quadrupole moment is found by the Eins
 
 $$h_{ij}=\frac{2}{r}\ddot{Q_{ij}}t$$
 Where $d$ is the distance from the source and $Q_{ij}$ is the mass quadrupole moment of the source found by 
-$$Q_{ij}=M(3x_ix_j-|x|^2\delta_{ij})$$
+$$Q_{ij}=\int_V\rho(x)(3x_ix_j-|x|^2\delta_{ij})\ dV$$
 
 
 ## Gravitational Waves
