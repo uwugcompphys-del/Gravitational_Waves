@@ -1,5 +1,5 @@
 # Gravitational Waves Project
-This project is a work in progress. The readme and the rest of the project is currently incomplete. simulates the spatial gravitational strain tensor $h_{ij}$ from various astrophysical sources over coordinate time. The current implementation includes a spinning neutron star. The system of units is $c=G=km=1$. As a result, the unit of time is a half-week.
+This project is a work in progress. The readme and the rest of the project is currently incomplete. simulates the spatial gravitational strain tensor $h_{ij}$ from various astrophysical sources over coordinate time. The current implementation includes a spinning neutron star. The system of units is $c=G=km=1$.
 
 ## Theoretical Background
 The current implementation assumes that the source is sufficiently far away such that the backgorund metric is equal to the Minkowski metric. With this approximation, we use corrdinate time and evaluate only the spatial components. Hence the resultant metric can be expressed as $g_{\mu\nu}\approx \eta_{\mu\nu}+h_{\mu\nu}$ Where $h_{\mu\nu}$ is a small perturbation known as the "Strain Tensor" due to the source of gravitational waves. 
