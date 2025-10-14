@@ -3,10 +3,11 @@ from scipy import integrate
 import matplotlib.pyplot as plt 
 import densities
 
+
 #create theta(t, omega0) functions for use in the rotation tensors in rotations.py
 
 def constant(t, omega0=1):
-    return omega0
+    return omega0*t
 
 def accelerating(t, omega0=1):
     return omega0*t+t**2

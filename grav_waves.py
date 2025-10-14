@@ -8,6 +8,8 @@ import time
 
 #Note that c=G=km=1 (time unit: arb. u)
 #suggested neutron star rho0: 0.5-1.5
+plt.rcParams['font.family'] = 'Times New Roman'
+
 
 def quadrupoles(source, t0, tmax, dt, a, b, c, rho0, density, omega0=0, rotation=rotations.not_rotating):
     """
@@ -89,27 +91,27 @@ def strain_plotter(source, dist, t0, tmax, dt, a, b, c, rho0, density, omega0=0,
     instance.mass()
     instance.quadrupole_Moment()
 
-    axs[0].plot(times,x_expansion)
+    axs[0].plot(times,x_expansion, color = "black")
     axs[0].set_xlabel("time after first wave detected (arb. u)")
     axs[0].set_ylabel("h_xx, x-expansion")
 
-    axs[2].plot(times,y_expansion)
+    axs[2].plot(times,y_expansion, color = "black")
     axs[2].set_xlabel("time after first wave detected (arb. u)")
     axs[2].set_ylabel("h_yy, y-expansion")
     
-    axs[4].plot(times,z_expansion)
+    axs[4].plot(times,z_expansion, color = "black")
     axs[4].set_xlabel("time after first wave detected (arb. u)")
-    axs[4].set_ylabel("h_zz, z-expansion")
+    axs[4].set_ylabel("h_zz, z-expansion (1)")
 
-    axs[1].plot(times,xy_shear)
+    axs[1].plot(times,xy_shear, color = "black")
     axs[1].set_xlabel("time after first wave detected (arb. u)")
     axs[1].set_ylabel("h_xy, xy-shear")
 
-    axs[3].plot(times,xz_shear)
+    axs[3].plot(times,xz_shear, color = "black")
     axs[3].set_xlabel("time after first wave detected (arb. u)")
     axs[3].set_ylabel("h_xz, xz-shear")
 
-    axs[5].plot(times,yz_shear)
+    axs[5].plot(times,yz_shear, color = "black")
     axs[5].set_xlabel("time after first wave detected (arb. u)")
     axs[5].set_ylabel("h_yz, yz-shear")
 
@@ -145,4 +147,4 @@ def wave_strain_tester():
 #Set distance to be around 1e15 to 1e20
 #strain_plotter(celestial_objects.ellipsoid_object,10e10,0,.3,.2, .9, .95, .9, 1, densities.neutron_star_gaussian_approx, 5e4, rotations.arbitrary_axis_nonConst_rotation_linear_decreasing_rate)    
 #strain_plotter(celestial_objects.ellipsoid_object,10e10,0,.9,.001, .9, .95, .9, 1, densities.gaussian, 5e4, rotations.arbitrary_axis_neutron_star_rotation)    
-strain_plotter(celestial_objects.ellipsoid_object,5e18,0,10,.01, .95, .9, 1, .8, densities.neutron_star_gaussian_approx, 60, rotations.arbitrary_precessing_axis_nonConst_rotation_linear_decreasing_rate) #change timestep back to .05 if not have a lot of time
+#strain_plotter(celestial_objects.ellipsoid_object,5e20,0,30,.01, .95, .9, 1, .8, densities.neutron_star_gaussian_approx, 6, rotations.arbitrary_precessing_axis_const_rotation_rate) #change timestep back to .05 if not have a lot of time
