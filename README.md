@@ -24,3 +24,16 @@ The sources of the gravitational waves are stored as classes in the file `celest
 
 ## Rotations
 A source needs to undergo motion in order for gravitational waves to be emitted. If a source has a component of rotational motion, the equations of rotational motion can be extracted from the `rotations.py` file for use
+
+## Fourier Analysis
+The frequencies of the generated gravitational waves can be extracted via Fourier Transform. This is done with `fourierAnalysis.py`
+
+## Saving Gravitational Waves
+Gravitational Wave files can be saved using `grav_waves.strain_writer()` and must be stored in the `strain_tensors` folder 
+
+## Running Functions
+Run functions in the `run_commands_here.py` file by first importing the relevant files and calling the function inside the `run_commands_here.py` file. Do not call 
+functions inside the file where the function is defined (Or comment out the calls when pushing to GitHub). 
+
+## Dependnecies
+This project requires the following dependencies to run: `numpy`, `scipy`, `matplotlib`
