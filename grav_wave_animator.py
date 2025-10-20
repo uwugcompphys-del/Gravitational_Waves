@@ -34,12 +34,12 @@ def strain_plotter_animator(source, dist, t0, tmaxGlobal, dt, a, b, c, rho0, den
         xExp = []
         yExp =[]
         zExp = []
-        if tmax_Local<= t_axis_limit: #"Later" Phase
-            lowerBound = tmax_Local-t_axis_limit 
-        else: #"Acummulation" Phase
+        if tmax_Local<= t_axis_limit: #"Acummunlation" Phase
             lowerBound = 0
+        else: #"Later" Phase
+            lowerBound = tmax_Local-t_axis_limit 
         for tup in tups:
-            if tup[0]<=tmax_Local and tup[0]>= lowerBound:
+            if tup[0]<=tmax_Local and tup[0]>= lowerBound: 
                 times.append(tup[0])
                 xExp.append(tup[1][0][0]) #Remember tup[1] is the tensor h_ij, need to specify i AND j otherwise it will plot the whole row and result in 3 lines on the same plot
                 yExp.append(tup[1][1][1])
@@ -68,14 +68,15 @@ def strain_plotter_animator(source, dist, t0, tmaxGlobal, dt, a, b, c, rho0, den
 
     for frameNum in frameNums:
         print(30*"\n", "Frames constructed. Assembling video...")
+        print(f"Packing Frame {frameNum} out of {frameNums[-1]}")
         frame_path = f"grav_wave_frames/frame_{frameNum:04d}.png"
         image = imageio.imread(frame_path)
         frames.append(image)
 
-    imageio.mimsave(output_path, frames, fps=30) #set to 100 fps if not simulating anything special
+    imageio.mimsave(output_path, frames, fps=30) #set to 30 fps if not simulating anything special
     print("Video saved with path ", output_path)
     print(path)
 
 
 #strain_plotter_animator(celestial_objects.ellipsoid_object,5e20,0,10,.05, .95, .9, 1, .8, densities.neutron_star_gaussian_approx, 6, rotations.arbitrary_precessing_axis_const_rotation_rate, 2, 1) 
-strain_plotter_animator(celestial_objects.ellipsoid_object,5e20,0,30,.01, .95, .9, 1, .8, densities.neutron_star_gaussian_approx, 6, rotations.arbitrary_precessing_axis_const_rotation_rate, 5,1)
+#strain_plotter_animator(celestial_objects.ellipsoid_object,5e20,0,30,.01, .95, .9, 1, .8, densities.neutron_star_gaussian_approx, 10, rotations.arbitrary_precessing_axis_const_rotation_rate, 3,1)

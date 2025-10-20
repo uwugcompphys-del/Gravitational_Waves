@@ -16,4 +16,4 @@ def oscillating(t, omega0=1):
     return omega0*t*(1+np.sin(2*t)/5)
 
 def linear_decreasing(t, omega0=1):
-    return omega0*t*(1-10e-6)
+    return omega0*t*(1-t*1e-6)

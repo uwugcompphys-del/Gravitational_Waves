@@ -167,7 +167,7 @@ def arbitrary_precessing_axis_const_rotation_rate(t, omega0=1):
     The angle equations are contained in angle_functions.py and is hardcoded into the code as theta=..., if need to change angle equations, manually change 
     the assignment of theta to the desired function.
     """
-    u_notNorm=np.array([0.5 * np.cos(np.pi * t),0.5 * np.sin(np.pi * t), 1]) #Arbitrary axis u, change this in file if want to change the axis of rotation
+    u_notNorm=np.array([0.1 * np.cos(np.pi * t),0.1 * np.sin(np.pi * t), 1]) #Arbitrary axis u, change this in file if want to change the axis of rotation
     u= u_notNorm/np.linalg.norm(u_notNorm)
     theta = angle_functions.constant(t,omega0)
     u = np.asarray(u)
@@ -184,3 +184,4 @@ def arbitrary_precessing_axis_const_rotation_rate(t, omega0=1):
     ])
 
     return R
+

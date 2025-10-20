@@ -38,9 +38,10 @@ def plotEllipsoid(a:float, b:float, c:float, rotationFunc:callable, omega0:float
     ax.set_xlim(-border, border)
     ax.set_ylim(-border, border)
     ax.set_zlim(-border, border)
-
-    marker = np.array([[0], [b], [0]]) 
-    marker2 = np.array([[0], [-b], [0]]) 
+    showMarkers = True 
+    if showMarkers:
+            marker = np.array([[0], [b], [0]]) 
+            marker2 = np.array([[0], [-b], [0]]) 
 
     ax.plot_surface(x,y,z, cmap="twilight")
     
@@ -58,16 +59,19 @@ def plotEllipsoid(a:float, b:float, c:float, rotationFunc:callable, omega0:float
         ax.set_title(f"Neutron Star with Small Imperfection - Ellipsoidal Approximation, t={cur_t:.2f}")
 
         newpoints = R @ points
-        rotated_marker = R @ marker
-        rotated_marker2 = R @ marker2
+        if showMarkers:
+            rotated_marker = R @ marker
+            rotated_marker2 = R @ marker2
 
         rotated_x=newpoints[0].reshape(x.shape) #unpack the bog newpoints tensor back into components
         rotated_y=newpoints[1].reshape(y.shape)
         rotated_z=newpoints[2].reshape(z.shape)  
 
         ax.plot_surface(rotated_x, rotated_y, rotated_z, cmap="bone", edgecolor="royalblue", linewidth=1/10)
-        ax.scatter(*rotated_marker, color='blue', s=30)
-        ax.scatter(*rotated_marker2, color='blue', s=30)
+        
+        if showMarkers:
+            ax.scatter(*rotated_marker, color='blue', s=30)
+            ax.scatter(*rotated_marker2, color='blue', s=30)
 
         ax.set_xlim(-border, border)
         ax.set_ylim(-border, border)
@@ -82,4 +86,4 @@ def plotEllipsoid(a:float, b:float, c:float, rotationFunc:callable, omega0:float
     print("Animation saved. See output animation for results.")
     plt.show()
 
-plotEllipsoid(.95, 1, .9, rotations.arbitrary_precessing_axis_const_rotation_rate, 6, 30, .05, True) #omega0 anywhere from 0.01 to 628
+#plotEllipsoid(.95, 1, .9, rotations.arbitrary_precessing_axis_const_rotation_rate, 10, 30, .05, True) #omega0 anywhere from 0.01 to 628
