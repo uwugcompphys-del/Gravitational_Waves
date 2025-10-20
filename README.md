@@ -7,7 +7,7 @@ The strain tensor and the associated mass quadrupole moment is found by the Eins
 
 $$h_{ij}=\frac{2}{r}\ddot{Q_{ij}}(t-r)$$
 
-We start the simulation at the time the first gravitational wave first reaches the observer. In other words, we perform the shift $t\to t+r/c$. Hence the formula becomes
+We start the simulation at the time the first gravitational wave first reaches the observer. In other words, we perform the shift $t\to t+r$. Hence the formula becomes
 
 $$h_{ij}=\frac{2}{r}\ddot{Q_{ij}}(t)$$
 
