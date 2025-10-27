@@ -10,7 +10,6 @@ import csv
 #Note that c=G=km=1 (time unit: arb. u)
 #suggested neutron star rho0: 0.5-1.5
 plt.rcParams['font.family'] = 'Times New Roman'
-plt.style.use('default') 
 
 
 def quadrupoles(source, t0, tmax, dt, a, b, c, rho0, density, omega0=0, rotation=rotations.not_rotating):
